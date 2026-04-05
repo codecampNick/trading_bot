@@ -1,21 +1,29 @@
 #!/bin/bash
-# setup.sh - Reproducible setup for the trading bot
+# setup.sh - Trading Bot Environment Setup
 
-echo "🔧 Setting up trading bot environment..."
+echo "🔧 Setting up Trading Bot environment with Poetry..."
 
-# Ensure correct Python version with pyenv
-pyenv install -s 3.14.3
-pyenv local 3.14.3
+# Ensure correct configuration
+poetry config virtualenvs.in-project true --local
 
-# Create virtual environment
-python -m venv .venv
+# Install dependencies if needed
+poetry install --no-root
 
-# Activate and install dependencies
+# Activate the environment
 source .venv/bin/activate
-pip install --upgrade pip
-pip install -r requirements.txt
 
-echo "✅ Setup complete!"
-echo "To start working:"
-echo "   source .venv/bin/activate"
-echo "   python -c \"import pandas; print('Ready to build trading bot!')\""
+echo "✅ Trading Bot environment is ready!"
+echo "Python: $(python --version)"
+echo "Pandas: $(python -c 'import pandas; print(pandas.__version__)' 2>/dev/null || echo 'Not found')"
+
+echo ""
+echo "=== Quick Commands ==="
+echo "   ./setup.sh          # Full setup + activate"
+echo "   source .venv/bin/activate   # Activate only"
+echo "   tb                  # Quick alias to activate (type 'tb' in any terminal)"
+
+# Add quick alias 'tb' to your shell
+echo 'alias tb="source ~/Projects/trading_bot/.venv/bin/activate"' >> ~/.zshrc 2>/dev/null || true
+
+echo ""
+echo "✅ Alias 'tb' added. In any new terminal, just type 'tb' to activate the environment."
