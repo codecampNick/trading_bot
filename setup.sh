@@ -19,11 +19,7 @@ echo "Pandas: $(python -c 'import pandas; print(pandas.__version__)' 2>/dev/null
 echo ""
 echo "=== Quick Commands ==="
 echo "   ./setup.sh          # Full setup + activate"
-echo "   source .venv/bin/activate   # Activate only"
-echo "   tb                  # Quick alias to activate (type 'tb' in any terminal)"
-
-# Add quick alias 'tb' to your shell
-echo 'alias tb="source ~/Projects/trading_bot/.venv/bin/activate"' >> ~/.zshrc 2>/dev/null || true
-
+echo "   tb                  # Activate environment"
+echo "   runbot              # Run the trading bot"
 echo ""
-echo "✅ Alias 'tb' added. In any new terminal, just type 'tb' to activate the environment."
+echo "Project Context: See PROJECT_CONTEXT.md"

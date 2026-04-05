@@ -1,48 +1,34 @@
-# Trading Bot Project Context
+# Trading Bot Project - Living Context
 
-**Last Updated:** 2026-04-05  
-**Status:** Foundation + basic structure complete
+**Last Updated:** April 5, 2026  
+**Status:** Foundation complete → Ready for strategy development
 
-## Current Tech Stack
-- Python 3.14.3 (via pyenv)
-- Poetry for dependency management
-- Project layout:
+## Current Setup
+- **Python**: 3.14.3 via pyenv + Poetry
+- **Environment activation**: `tb` or `./setup.sh`
+- **Run the bot**: `runbot` (after activation)
+- **Project structure**:
+  - `src/trading_bot/main.py` → entry point
   - `src/trading_bot/` → main package
-  - `config/` → configuration
-  - `strategies/` → trading strategies
-  - `tests/` → tests
-  - `data/`, `logs/` → data and logs
-- Activation: Use `tb` alias or `./setup.sh`
-- Run bot: `runbot` alias (after `tb`)
+  - `config/`, `strategies/`, `tests/`, `data/`, `logs/`
+- **Workflow**:
+  1. Open terminal → `cd ~/Projects/trading_bot`
+  2. `tb` (or `./setup.sh`)
+  3. `runbot` to test
 
-## Current Files
-- `setup.sh` — setup + activation
-- `src/trading_bot/main.py` — basic entry point
-- `pyproject.toml` — dependencies
-- `.vscode/settings.json` — VS Code config
-
-## Goals / Next Phase
+## Next Phase
 We are ready to implement the actual trading logic.
 
-## User Preferences (update as needed)
-- IDE: VS Code (with `tb` alias for activation)
-- Keep using Poetry for now
-- Console + VS Code workflow
-
-## Trading Bot Requirements (to be filled)
-- Market: 
-- Strategy type: 
-- Timeframe: 
-- Backtesting vs Live: 
-- Exchange/Broker: 
+## Trading Bot Goals (Please fill in / update)
+- **Market**: ? (Crypto spot/futures, Stocks, etc.)
+- **Strategy type**: ? (Moving average crossover, RSI, custom idea, etc.)
+- **Timeframe**: ? (1m, 5m, hourly, daily...)
+- **Development order**: Backtesting first or live/paper trading?
+- **Exchange/Broker**: ? (Binance, Bybit, Alpaca, etc.)
+- **Other requirements**: Risk management, position sizing, logging, etc.
 
 ## Important Notes
-- Always activate environment with `tb` before running code
-- Use `python -m src.trading_bot.main` or `runbot` to start the bot
-- Never commit `.env`, logs, or `.venv`
-
----
-
-**How to use this file:**
-When starting a new session, paste the content of `PROJECT_CONTEXT.md` at the top of your message so I have full context.
+- Always activate with `tb` before running code
+- Never commit `.env`, `.venv`, or sensitive keys
+- Use `PROJECT_CONTEXT.md` to keep me updated in new sessions
 
