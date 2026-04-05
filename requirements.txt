@@ -1,0 +1,9 @@
+# Core data & analysis
+pandas
+numpy
+requests
+
+# Environment variables (never commit real API keys!)
+python-dotenv
+
+# Will add more later (ccxt, backtrader, ta-lib, etc. depending on your strategy)
