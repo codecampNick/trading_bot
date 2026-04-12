@@ -5,8 +5,8 @@ Conservative Silo (Fiduciary Mode) with General Account funding
 
 import sys
 from datetime import datetime
-from accounts.general_account import GeneralAccount
-from strategies.conservative import ConservativeStrategy
+from trading_bot.accounts.general_account import GeneralAccount
+from trading_bot.strategies.conservative import ConservativeStrategy
 
 def main():
     print("=" * 70)
