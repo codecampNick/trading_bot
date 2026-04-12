@@ -6,7 +6,7 @@ echo "🔧 Setting up Trading Bot environment with Poetry..."
 # Ensure correct configuration
 poetry config virtualenvs.in-project true --local
 
-# Install dependencies if needed
+# Install dependencies
 poetry install --no-root
 
 # Activate the environment
@@ -14,12 +14,15 @@ source .venv/bin/activate
 
 echo "✅ Trading Bot environment is ready!"
 echo "Python: $(python --version)"
-echo "Pandas: $(python -c 'import pandas; print(pandas.__version__)' 2>/dev/null || echo 'Not found')"
 
 echo ""
 echo "=== Quick Commands ==="
-echo "   ./setup.sh          # Full setup + activate"
-echo "   tb                  # Activate environment"
-echo "   runbot              # Run the trading bot"
-echo ""
-echo "Project Context: See PROJECT_CONTEXT.md"
+echo "   tb       → Activate environment"
+echo "   runbot   → Run the trading bot"
+echo "   ./setup.sh → Full setup"
+
+# Update aliases to use the correct path (src/core)
+echo 'alias tb="source ~/Projects/trading_bot/.venv/bin/activate"' >> ~/.zshrc 2>/dev/null || true
+echo 'alias runbot="python src/core/main.py"' >> ~/.zshrc 2>/dev/null || true
+
+echo "✅ Aliases updated. Type 'tb' then 'runbot' to run."
