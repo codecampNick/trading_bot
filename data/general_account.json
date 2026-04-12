@@ -1,0 +1,25 @@
+{
+  "balance": 42.19,
+  "funding_history": [
+    {
+      "timestamp": "2026-04-12T15:22:34.451394",
+      "silo": "Conservative",
+      "amount": 25.0,
+      "remaining_balance": 75.0
+    },
+    {
+      "timestamp": "2026-04-12T15:36:33.600852",
+      "silo": "Conservative",
+      "amount": 18.75,
+      "remaining_balance": 56.25
+    },
+    {
+      "timestamp": "2026-04-12T15:46:10.918239",
+      "silo": "Conservative",
+      "amount": 14.06,
+      "remaining_balance": 42.19
+    }
+  ],
+  "last_funding_date": "2026-04-12T15:46:10.918251",
+  "last_updated": "2026-04-12T15:46:10.918254"
+}
