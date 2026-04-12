@@ -6,10 +6,10 @@ Prioritizes capital preservation with modest, reliable growth.
 
 import pandas as pd
 from datetime import datetime
-from typing import Dict, Optional
+from typing import Dict
 
 class ConservativeStrategy:
-    def __init__(self, initial_capital: float = 100_000.0):
+    def __init__(self, initial_capital: float = 100.0):   # Changed to $100 nest egg
         self.name = "Conservative"
         self.capital = initial_capital
         self.positions: Dict[str, Dict] = {}  # symbol -> position details
@@ -22,7 +22,6 @@ class ConservativeStrategy:
         if len(df) < 200:
             return "hold"
 
-        # Calculate moving averages
         df = df.copy()
         df['sma50'] = df['close'].rolling(window=50).mean()
         df['sma200'] = df['close'].rolling(window=200).mean()
@@ -30,25 +29,24 @@ class ConservativeStrategy:
         latest = df.iloc[-1]
 
         if latest['sma50'] > latest['sma200'] and latest['sma50'] > latest['close'] * 0.98:
-            return "buy"      # Golden Cross with confirmation
+            return "buy"
         elif latest['sma50'] < latest['sma200']:
-            return "sell"     # Death Cross
+            return "sell"
         else:
             return "hold"
 
     def calculate_position_size(self, price: float) -> int:
         """Calculate conservative position size."""
         risk_amount = self.capital * self.max_risk_per_trade
-        stop_loss_distance = price * 0.06  # assume 6% stop-loss
+        stop_loss_distance = price * 0.06
         shares = int(risk_amount / stop_loss_distance)
-        return max(1, shares)  # at least 1 share
+        return max(1, shares)
 
     def execute_paper_trade(self, symbol: str, signal: str, price: float, timestamp: datetime):
-        """Simulate a paper trade for the silo."""
+        """Simulate a paper trade."""
         if signal == "buy" and symbol not in self.positions:
             shares = self.calculate_position_size(price)
             cost = shares * price
-            
             if cost <= self.capital * self.max_portfolio_exposure:
                 self.positions[symbol] = {
                     "shares": shares,
@@ -63,7 +61,7 @@ class ConservativeStrategy:
                     "shares": shares,
                     "price": price
                 })
-                print(f"[{timestamp.date()}] CONSERVATIVE BUY {shares} {symbol} @ ${price:.2f}")
+                print(f"[{timestamp.date()}] BUY {shares} {symbol} @ ${price:.2f}")
 
         elif signal == "sell" and symbol in self.positions:
             position = self.positions.pop(symbol)
@@ -79,10 +77,10 @@ class ConservativeStrategy:
                 "price": price,
                 "profit": profit
             })
-            print(f"[{timestamp.date()}] CONSERVATIVE SELL {position['shares']} {symbol} @ ${price:.2f} | Profit: ${profit:.2f}")
+            print(f"[{timestamp.date()}] SELL {position['shares']} {symbol} @ ${price:.2f} | Profit: ${profit:.2f}")
 
     def get_status(self) -> dict:
-        """Return current status of the Conservative Silo."""
+        """Return current status of the silo."""
         total_exposure = sum(pos["shares"] * pos["entry_price"] for pos in self.positions.values())
         return {
             "silo": self.name,
