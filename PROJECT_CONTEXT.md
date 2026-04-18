@@ -1,16 +1,16 @@
 # Trading Bot Project - Living Context
 
-**Last Updated:** April 12, 2026  
-**Status:** Foundation complete → Conservative Silo strategy + basic simulation implemented. Tests & CI coming next.
+**Last Updated:** April 18, 2026  
+**Status:** Foundation complete → Conservative Silo running successfully via Poetry
 
 ## Project Overview
-A modular multi-silo paper trading bot. Each silo has its own personality and risk rules. All funding flows through a central **General Account**. Currently focused on simulation only (no real money or live brokers).
+A modular multi-silo paper trading bot. Each silo has its own personality and risk rules. All funding flows through a central **General Account**. Currently focused on simulation / paper trading only (no real money or live brokers connected yet).
 
 ### Core Philosophy
-- Four distinct silos with different strategies
+- Four distinct silos with different risk personalities
 - Conservative Silo acts as a responsible fiduciary (capital preservation first)
-- Profits can flow back to General Account
-- Everything stays in paper-trading / simulation mode
+- Profits can flow back to the General Account
+- Everything remains in paper-trading / simulation mode for now
 
 ## Current Silos
 
@@ -21,31 +21,29 @@ A modular multi-silo paper trading bot. Each silo has its own personality and ri
 | Tech/Innovation   | Growth-oriented        | Planned      | TBD                             |
 | Crypto            | Aggressive Sniper      | Planned      | TBD                             |
 
-## Project Structure
+## Project Structure (Current)
 
 ```bash
 trading_bot_project/
-├── src/                          # All source code (src layout - best practice)
+├── src/
 │   └── trading_bot/
 │       ├── __init__.py
-│       ├── main.py               # Entry point + simulation loop
-│       └── ...                   # (will expand with core/, utils/, etc.)
-├── accounts/
-│   └── general_account.py        # Persistent funding source
-├── strategies/
-│   └── conservative.py           # 50/200 SMA + fiduciary risk controls
-├── tests/                        # Unit tests (being added now)
-│   └── test_conservative_silo.py
-├── config/                       # Configuration files (future use)
-├── data/                         # Persistent data (general_account.json, etc.)
-├── logs/                         # Log files (future)
-├── .github/
-│   └── workflows/                # GitHub Actions CI (coming next)
-├── 
-├── pyproject.toml                # Poetry dependencies
+│       ├── main.py                    # Entry point + run() function
+│       ├── accounts/
+│       │   └── general_account.py     # Central funding account
+│       ├── strategies/
+│       │   └── conservative.py        # Conservative silo logic
+│       └── ...
+├── config/
+├── data/
+│   └── general_account.json           # Persistent account state
+├── info/
+│   └── set_up.md                      # Setup instructions
+├── logs/
+├── tests/
+├── pyproject.toml                     # Poetry configuration
 ├── poetry.lock
-├── poetry.toml
-├── setup.sh                      # Environment activation
-├── PROJECT_CONTEXT.md            # ← This living document (single source of truth)
+├── PROJECT_CONTEXT.md                 # This living document
 ├── README.md
-└── ...                           # (other root files)
+├── setup.sh
+└── ...

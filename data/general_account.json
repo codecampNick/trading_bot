@@ -1,5 +1,5 @@
 {
-  "balance": 17.8,
+  "balance": 3.17,
   "funding_history": [
     {
       "timestamp": "2026-04-12T15:22:34.451394",
@@ -36,8 +36,44 @@
       "silo": "Conservative",
       "amount": 5.93,
       "remaining_balance": 17.8
+    },
+    {
+      "timestamp": "2026-04-18T15:11:55.226483",
+      "silo": "Conservative",
+      "amount": 4.45,
+      "remaining_balance": 13.35
+    },
+    {
+      "timestamp": "2026-04-18T15:14:02.373573",
+      "silo": "Conservative",
+      "amount": 3.34,
+      "remaining_balance": 10.01
+    },
+    {
+      "timestamp": "2026-04-18T16:44:39.825506",
+      "silo": "Conservative",
+      "amount": 2.5,
+      "remaining_balance": 7.51
+    },
+    {
+      "timestamp": "2026-04-18T16:51:39.664581",
+      "silo": "Conservative",
+      "amount": 1.88,
+      "remaining_balance": 5.63
+    },
+    {
+      "timestamp": "2026-04-18T17:03:00.767643",
+      "silo": "Conservative",
+      "amount": 1.41,
+      "remaining_balance": 4.22
+    },
+    {
+      "timestamp": "2026-04-18T17:10:56.120956",
+      "silo": "Conservative",
+      "amount": 1.05,
+      "remaining_balance": 3.17
     }
   ],
-  "last_funding_date": "2026-04-12T16:31:03.925996",
-  "last_updated": "2026-04-12T16:31:03.925999"
+  "last_funding_date": "2026-04-18T17:10:56.120962",
+  "last_updated": "2026-04-18T17:10:56.120965"
 }

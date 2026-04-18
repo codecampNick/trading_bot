@@ -7,7 +7,7 @@ Acts like a responsible fiduciary: capital preservation first, steady modest ret
 import pandas as pd
 from datetime import datetime
 from typing import Dict, Optional, List
-from accounts.general_account import GeneralAccount
+from trading_bot.accounts.general_account import GeneralAccount
 
 
 class ConservativeStrategy:

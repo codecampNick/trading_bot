@@ -8,7 +8,7 @@ from datetime import datetime
 from trading_bot.accounts.general_account import GeneralAccount
 from trading_bot.strategies.conservative import ConservativeStrategy
 
-def main():
+def run():
     print("=" * 70)
     print("🚀 Trading Bot - Conservative Silo (Fiduciary Mode)")
     print(f"Started at: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
@@ -39,4 +39,4 @@ def main():
     # TODO: Later we will add a simulation loop with fake or real data here
 
 if __name__ == "__main__":
-    main()
+    run()
